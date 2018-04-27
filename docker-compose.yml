@@ -1,0 +1,9 @@
+version: '3'
+services:
+  dnsmasq:
+    image: crzidea/dnsmasq
+    ports:
+      - "5353:53/udp"
+      - "5353:53/tcp"
+    volumes:
+      - "./root/etc/dnsmasq.d:/etc/dnsmasq.d"
