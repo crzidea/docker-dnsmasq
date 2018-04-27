@@ -1,5 +1,7 @@
 FROM alpine
 
-RUN apk update && apk add dnsmasq
+RUN apk update && apk add dnsmasq bind-tools
 
-CMD dnsmasq --user=root --no-daemon
+COPY docker-entrypoint.sh /
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
